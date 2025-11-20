@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP Analyse Factorielle</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Analyse Factorielle - TP1 INF4137</h1>
+        <p class="subtitle"> Application Web pour une meilleure visualisation.</p>
+
+        <div class="input-section">
+            <h2>&#x1F4BE; Saisie de la Matrice **X**</h2>
+            <label for="matrix-input">Entrez la matrice ligne par ligne. Les valeurs d'une ligne doivent être séparées par des **virgules** :</label>
+            <p class="example"><strong>Exemple (pour une matrice 2x3) :</strong><br/><code>3,1,1</code><br/><code>-1,3,1</code></p>
+            
+            <textarea id="matrix-input" placeholder="Zone de saisie... "></textarea>
+            <button onclick="runAnalysis()">Lancer l'Analyse Factorielle</button>
+            <div id="error-message" class="error"></div>
+            <div id="loading" class="loading">Calcul en cours...</div>
+        </div>
+
+        <div class="result-section" id="results-container" style="display: none;">
+            <h2>&#x1F4C8; Résultats de l'Analyse</h2>
+
+            <h3>Valeurs Propres et Taux d'Inertie</h3>
+            <table id="eigen-table">
+                <thead>
+                    <tr>
+                        <th>Axe (s)</th>
+                        <th>Valeur Propre (λ)</th>
+                        <th>Taux d'Inertie (%)</th>
+                        <th>Inertie Cumulée (%)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <h3>Vecteurs Propres (Axes Factoriels)</h3>
+            <div class="vector-display">
+                <div class="vector-block">
+                    <h4>Vecteurs u (Variables)</h4>
+                    <pre id="u-vectors" class="aligned-vectors"></pre>
+                </div>
+                <div class="vector-block">
+                    <h4>Vecteurs v (Individus)</h4>
+                    <pre id="v-vectors" class="aligned-vectors"></pre>
+                </div>
+            </div>
+
+            <h3>Matrice Approchée X (Reconstruction)</h3>
+            <p class="matrix-description">La matrice suivante est une approximation de X calculée en utilisant le rang S pour conserver au moins 60% de l'inertie totale.</p>
+             <pre id="approx-matrix" class="aligned-matrix"></pre>
+            <div id="matrix-info"></div> 
+           
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

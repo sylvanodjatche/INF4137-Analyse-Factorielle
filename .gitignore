@@ -1,0 +1,17 @@
+# --- Environnement Python (Virtual Environment) ---
+venv/
+.venv/
+env/
+
+# --- Fichiers de cache et d'exécution Python ---
+__pycache__/
+*.pyc
+*.pyo
+
+# --- Fichiers de l'IDE / OS (Ex: VS Code, Mac OS) ---
+.DS_Store
+.vscode/
+
+# --- Flask / Gunicorn / Déploiement ---
+instance/
+.flaskenv

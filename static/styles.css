@@ -1,0 +1,183 @@
+/* --- Base Reset --- */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #2e2f31, #a6c8f0);
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Typography & Headings --- */
+h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+.subtitle {
+    text-align: center;
+    color: #6c757d;
+    margin-bottom: 25px;
+    font-size: 0.9em;
+}
+h2 {
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    color: #007bff;
+    font-size: 1.5em;
+}
+h3 {
+    margin-top: 30px;
+    color: #495057;
+    border-left: 5px solid #ffc107;
+    padding-left: 10px;
+}
+h4 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 5px;
+}
+.example {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+/* --- Input Section --- */
+.input-section {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    min-height: 120px;
+    font-family: 'Consolas', 'Courier New', monospace;
+}
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+button:hover {
+    background-color: #218838;
+}
+.error {
+    color: #dc3545;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.loading {
+    text-align: center;
+    color: #007bff;
+    font-size: 1.2em;
+    margin-top: 10px;
+    display: none;
+}
+
+/* --- Results Section --- */
+.result-section {
+    padding-top: 10px;
+}
+
+/* Table Style (Valeurs Propres) */
+#eigen-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.95em;
+}
+#eigen-table th, #eigen-table td {
+    border: 1px solid #dee2e6;
+    padding: 12px;
+    text-align: left;
+}
+#eigen-table th {
+    background-color: #e9f5ff;
+    color: #007bff;
+}
+.highlight {
+    background-color: #fff3cd; /* Jaune clair pour les axes retenus */
+    font-weight: bold;
+}
+
+/* Vector and Matrix Display (Crucial for alignment) */
+.vector-display {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.vector-block {
+    width: 48%;
+    background-color: #f8f9fa;
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 6px;
+}
+pre {
+    background-color: #f8f9fa;
+    border: none;
+    padding: 0;
+    margin: 0;
+    overflow-x: auto;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 1.1em;
+}
+
+/* Correction d'Alignement : Utiliser une grille ou des blocs pour chaque composante */
+.aligned-vectors {
+    display: grid;
+    /* 3 colonnes de largeur fixe (ajustez si plus de 3 composantes) */
+    grid-template-columns: repeat(3, max-content); 
+    grid-auto-flow: row;
+    column-gap: 20px;
+    text-align: right;
+    padding: 5px 0;
+}
+
+.aligned-matrix {
+    display: grid;
+    /* Alignement pour 3 colonnes/variables */
+    grid-template-columns: repeat(3, max-content);
+    grid-auto-flow: row;
+    column-gap: 30px;
+    text-align: right;
+    background-color: #eaf0f6;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid #dcdfe3;
+}
+.matrix-description {
+    font-style: italic;
+    color: #6c757d;
+}
